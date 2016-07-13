@@ -6,7 +6,7 @@ gem 'rails', '~> 5.0.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+# gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -33,10 +33,11 @@ gem 'capistrano-rails', group: :development
 group :development, :test do
     gem 'capistrano',         require: false
     # gem 'capistrano-rvm',     require: false
+    gem 'capistrano-passenger'
     gem 'capistrano-chruby'
     gem 'capistrano-rails',   require: false
     gem 'capistrano-bundler', require: false
-    gem 'capistrano3-puma',   require: false
+    # gem 'capistrano3-puma',   require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 end
@@ -49,6 +50,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
