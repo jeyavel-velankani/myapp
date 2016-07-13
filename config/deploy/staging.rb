@@ -3,7 +3,7 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-# server 'example.com', user: 'deploy', roles: %w{app db web}, my_property: :my_value
+server '10.0.24.18', user: 'suvarna.bavisetti', roles: %w{app db web}
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
@@ -41,6 +41,11 @@
 #
 # Global options
 # --------------
+set :ssh_options, { 
+  forward_agent: true, 
+  #paranoid: true, 
+  keys: "~/.ssh/id_rsa" 
+}
 #  set :ssh_options, {
 #    keys: %w(/home/rlisowski/.ssh/id_rsa),
 #    forward_agent: false,
